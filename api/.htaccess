@@ -1,0 +1,13 @@
+# ШиноСервис — защита API-папки
+
+# Запрещаем прямой доступ к служебным файлам
+<FilesMatch "^(config|db|helpers)\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Разрешаем CORS-заголовки проходить
+Header always set Access-Control-Allow-Credentials "true"
+
+# Включаем JSON-ответы
+AddDefaultCharset UTF-8
